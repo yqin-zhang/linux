@@ -7,4 +7,4 @@ udp_server:UdpServer.cc
 	g++ -o $@ $^ -std=c++17
 .PHONY:clean
 clean:
-	rm -f all
+	rm -f udp_client udp_server
