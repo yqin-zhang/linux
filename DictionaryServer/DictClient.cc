@@ -9,13 +9,13 @@
 
 void Usage(const std::string& proc)
 {
-    std::cout << "Usage: " << proc << " serverport" << std::endl;
-    std::cout << "Example: " << proc << " 8080" << std::endl;
+    std::cout << "Usage: " << proc << " serverip serverport" << std::endl;
+    std::cout << "Example: " << proc << " 127.0.0.1 8080" << std::endl;
 }
 
 int main(int argc, char* argv[])
 {
-    if(argc != 2)
+    if(argc != 3)
     {
         Usage(argv[0]);
         exit(0);

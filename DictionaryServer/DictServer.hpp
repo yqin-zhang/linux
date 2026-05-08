@@ -92,7 +92,7 @@ public:
             if(n > 0)
             {
             
-
+                //当字符串写到缓冲区，不然没有清理干净
                 buffer[n] = '\0';
                 
                 // 获取客户端信息
@@ -101,6 +101,8 @@ public:
                 uint16_t client_port = ntohs(peer.sin_port);
                 
                 std::string word=buffer;
+
+                LOG(LogLevel::DEBUG)<<"用户查找："<<word;
                 //回调
                 std::string result=_cb(word,client_ip,client_port);
 
