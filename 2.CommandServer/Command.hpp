@@ -33,7 +33,7 @@ public:
     }
     std::string Exec(const std::string &cmd)
     {
-        if(!IsSafe(cmd))
+        if (!IsSafe(cmd))
         {
             return "坏人";
         }
