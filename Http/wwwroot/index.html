@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的HTTP服务器</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+        }
+        
+        h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        
+        .status {
+            background: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 0.9em;
+        }
+        
+        .info {
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: left;
+        }
+        
+        .info p {
+            margin: 10px 0;
+            color: #333;
+        }
+        
+        .info .label {
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.2s;
+            border: none;
+        }
+        
+        .btn:hover {
+            background: #5a67d8;
+            transform: scale(1.05);
+        }
+        
+        .btn-login {
+            background: #667eea;
+        }
+        
+        .btn-register {
+            background: #27ae60;
+        }
+        
+        .btn-register:hover {
+            background: #219a52;
+        }
+        
+        .btn-test {
+            background: #e74c3c;
+            margin-top: 10px;
+        }
+        
+        .btn-test:hover {
+            background: #c0392b;
+        }
+        
+        .footer {
+            margin-top: 20px;
+            color: #999;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="status">✅ 服务器运行中</div>
+        <h1>🚀 Hello, World!</h1>
+        <p>欢迎访问我的 C++ HTTP 服务器</p>
+        
+        <div class="btn-group">
+            <a href="/login.html" class="btn btn-login">🔐 登录</a>
+            <a href="/register.html" class="btn btn-register">📝 注册</a>
+        </div>
+        
+        <div class="info">
+            <p><span class="label">服务器类型：</span> 自定义 C++ HTTP Server</p>
+            <p><span class="label">当前时间：</span> <span id="time"></span></p>
+            <p><span class="label">状态：</span> 正常响应</p>
+        </div>
+        
+        <button class="btn btn-test" onclick="alert('Hello from C++ HTTP Server!')">点击测试</button>
+        
+        <div class="footer">
+            Powered by C++ | 简单 HTTP 协议实现
+        </div>
+    </div>
+    
+    <script>
+        function updateTime() {
+            const now = new Date();
+            document.getElementById('time').textContent = now.toLocaleString('zh-CN');
+        }
+        updateTime();
+        setInterval(updateTime, 1000);
+    </script>
+</body>
+</html>
